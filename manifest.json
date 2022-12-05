@@ -1,0 +1,24 @@
+{
+    "name": "Youtube Viewer", 
+    "version": "1.0.0",
+    "description": "This is my first youtubr Extensions",
+    "manifest_version": 3,
+    "permissions": ["tabs", "activeTab", "storage"],
+    "host_permissions": ["https://*.youtube.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "js": ["contentScript.js"],
+            "web_accessible_resources": ["work.png"]
+        }
+    ],
+    "author": "Bhupinder Pal Singh",
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Youtube Extension"
+    }
+    
+}
